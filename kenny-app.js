@@ -13,8 +13,8 @@ import "./kenny-calendar.js";
 import "./kenny-carousel.js";
 import "./kenny-event.js";
 import "./kenny-logo.js";
-import "./kenny-photo.js";
 import "./kenny-social.js";
+import "./kenny-image.js";
 
 
 /**
@@ -26,7 +26,7 @@ import "./kenny-social.js";
  * Compiles all the different components to one .js file
  * for simpler html.
  */
-export class KennyEmporium extends DDDSuper(I18NMixin(LitElement)) {
+export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
     return "kenny-app";
@@ -103,8 +103,9 @@ export class KennyEmporium extends DDDSuper(I18NMixin(LitElement)) {
       <div class="wrapper">
   
         <kenny-carousel>
-          <kenny-image src="/api/kenny-images"></kenny-image>
+          <kenny-image src="/api/kenny-images.json"></kenny-image>
         </kenny-carousel>
+        <kenny-social></kenny-social>
   
         ${this.renderPage()}
   
@@ -122,4 +123,4 @@ export class KennyEmporium extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(KennyEmporium.tag, KennyEmporium);
+globalThis.customElements.define(KennyApp.tag, KennyApp);

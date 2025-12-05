@@ -2,7 +2,6 @@ import { LitElement, html, css } from "lit";
 import { RadioBehaviors } from "@haxtheweb/radio-behaviors/radio-behaviors.js";
 import "@haxtheweb/simple-icon/lib/simple-icon-lite.js";
 import "@haxtheweb/simple-icon/lib/simple-icons.js";
-import "./lib/a11y-carousel-button.js";
 
 /** 
  * kenny-carousel

@@ -1,6 +1,3 @@
-/*
-Component to make a social banner for the team.
-*/
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
@@ -15,7 +12,7 @@ export class KennySocial extends DDDSuper(LitElement) {
 
   static get tag() {
     return "kenny-social";
-
+  }
   constructor() {
     super();
     this.year = new Date().getFullYear();
@@ -37,13 +34,13 @@ export class KennySocial extends DDDSuper(LitElement) {
         color: var(--ddd-theme-default-white);
         margin-top: var(--ddd-spacing-8);
       }
-      .footer-wrapper {
+      .social-wrapper {
         max-width: 1200px;
         margin: 0 auto;
         padding: var(--ddd-spacing-4);
         text-align: center;
       }
-      .footer-content {
+      .social-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -78,7 +75,6 @@ export class KennySocial extends DDDSuper(LitElement) {
           </div>
           <div class="social-links">
             <a href="#" class="social-link"> Facebook</a>
-            <a href="#" class="social-link"> Fortnite</a>
             <a href="#" class="social-link"> Instagram</a>
           </div>
         </div>
@@ -91,4 +87,4 @@ export class KennySocial extends DDDSuper(LitElement) {
   }
 }
 
-globalThis.customElements.define(KiwiFooter.tag, KiwiFooter);
+globalThis.customElements.define(KennySocial.tag, KennySocial);

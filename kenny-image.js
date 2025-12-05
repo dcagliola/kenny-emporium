@@ -9,7 +9,7 @@ class KennyImageLoader extends LitElement {
 
   constructor() {
     super();
-    this.src = "/api/kenny-images";
+    this.src = "/api/kenny-images.json";
   }
 
   createRenderRoot() {
