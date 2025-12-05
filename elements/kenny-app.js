@@ -5,14 +5,14 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-import "./kenny-page.js";
-import "./kenny-banner.js";
-import "./kenny-arrow.js"
-import "./kenny-button.js";
+import "./page-boilerplate/kenny-page.js";
+import "./page-boilerplate/kenny-banner.js";
+import "./page-boilerplate/kenny-arrow.js";
+import "./page-boilerplate/kenny-button.js";
 import "./kenny-calendar.js";
 import "./kenny-carousel.js";
 import "./kenny-event.js";
-import "./kenny-logo.js";
+import "./page-boilerplate/kenny-logo.js";
 import "./kenny-social.js";
 import "./kenny-image.js";
 
