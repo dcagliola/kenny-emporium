@@ -7,12 +7,11 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./page-boilerplate/kenny-page.js";
 import "./page-boilerplate/kenny-banner.js";
-import "./page-boilerplate/kenny-arrow.js";
+import "./page-boilerplate/kenny-animated.js";
 import "./page-boilerplate/kenny-button.js";
 import "./kenny-calendar.js";
 import "./kenny-carousel.js";
 import "./kenny-event.js";
-import "./page-boilerplate/kenny-logo.js";
 import "./kenny-social.js";
 import "./kenny-image.js";
 
@@ -101,7 +100,12 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
     return html`
 
     <kenny-banner>
-      <kenny-logo slot="logo"></kenny-logo>
+      <kenny-animated 
+        link="/about"
+        slot="logo" 
+        src="https://www.dictionary.com/e/wp-content/uploads/2018/05/cross-mark.png"
+        hoveredSrc="https://cdn-icons-png.flaticon.com/256/8631/8631570.png">
+      </kenny-animated>
       <kenny-button slot="buttons" label="Schedule" link="/schedule">
         <a href="/schedule/games">Games</a>
         <a href="/schedule/practice">Practice</a>

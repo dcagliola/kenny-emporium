@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-import "./kenny-arrow.js";
+import "./kenny-animated.js";
 
 /**
  * `kenny-button`
@@ -116,25 +116,29 @@ static get styles() {
     }
 
     // Lit render the HTML
-    render() {
-        return html`
-            <div 
-                class="hover-container"
-                @mouseenter="${this._handleMouseEnter}"
-                @mouseleave="${this._handleMouseLeave}">
-                <a 
-                    class="button-container"
-                    href="${this.link}"
-                    @click="${this._handleClick}">
-                    <span>${this.label}</span>
-                    <kenny-arrow .isHovered="${this.isHovered}"></kenny-arrow>
-                </a>
-                <div class="dropdown">
-                    <slot></slot>
-                </div>
+render() {
+    return html`
+        <div 
+            class="hover-container"
+            @mouseenter="${this._handleMouseEnter}"
+            @mouseleave="${this._handleMouseLeave}">
+            <a 
+                class="button-container"
+                href="${this.link}"
+                @click="${this._handleClick}">
+                <span>${this.label}</span>
+                <kenny-animated 
+                    .isHovered="${this.isHovered}"
+                    src="elements/page-boilerplate/images/kenny-up.png"
+                    hoveredSrc="elements/page-boilerplate/images/kenny-down.png">
+                </kenny-animated>
+            </a>
+            <div class="dropdown">
+                <slot></slot>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
     }
 
 globalThis.customElements.define(KennyButton.tag, KennyButton);
