@@ -2,6 +2,8 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./kenny-animated.js";
+const kennyUp = new URL("/elements/page-boilerplate/images/kenny-up.png", import.meta.url).href;
+const kennyDown = new URL("/elements/page-boilerplate/images/kenny-down.png", import.meta.url).href;
 
 /**
  * `kenny-button`
@@ -129,8 +131,8 @@ render() {
                 <span>${this.label}</span>
                 <kenny-animated 
                     .isHovered="${this.isHovered}"
-                    src="elements/page-boilerplate/images/kenny-up.png"
-                    hoveredSrc="elements/page-boilerplate/images/kenny-down.png">
+                    src="${kennyUp}"
+                    hoveredSrc="${kennyDown}">
                 </kenny-animated>
             </a>
             <div class="dropdown">

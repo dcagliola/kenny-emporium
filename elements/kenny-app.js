@@ -14,7 +14,8 @@ import "./kenny-carousel.js";
 import "./kenny-event.js";
 import "./kenny-social.js";
 import "./kenny-image.js";
-
+const kennyHome1 = new URL("/elements/page-boilerplate/images/kenny-home1.png", import.meta.url).href;
+const kennyHome2 = new URL("/elements/page-boilerplate/images/kenny-home2.png", import.meta.url).href;
 
 /**
  * `kenny-app`
@@ -135,8 +136,8 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
           <kenny-animated 
             link="/about"
             slot="logo" 
-            src="https://www.dictionary.com/e/wp-content/uploads/2018/05/cross-mark.png"
-            hoveredSrc="https://cdn-icons-png.flaticon.com/256/8631/8631570.png">
+            src="${kennyHome1}"
+            hoveredSrc="${kennyHome2}">
           </kenny-animated>
           <kenny-button slot="buttons" label="Schedule" link="/schedule">
             <a href="/schedule/games">Games</a>
