@@ -28,10 +28,27 @@ export class KennySocial extends DDDSuper(LitElement) {
   static get styles() {
     return [super.styles,
     css`
+
+       /* Light Theme */
+      :host {
+        --bg-color: var(--ddd-theme-default-roarLight);
+        --text-color: var(--ddd-theme-default-potentialMidnight);
+        --link-color: var(--ddd-theme-default-landgrantBrown);
+      }
+
+      /* Dark Theme */
+      @media(prefers-color-scheme: dark) {
+        :host {
+          --bg-color: var(--ddd-theme-default-shrineTan);
+          --text-color: var(--ddd-theme-default-roarLight);
+          --link-color: var(--ddd-theme-default-landgrantBrown);
+        }
+      }
+    
       :host {
         display: block;
-        background-color: var(--ddd-theme-default-roarLight);
-        color: var(--ddd-theme-default-potentialMidnight);
+        background-color: var(--bg-color);
+        color: var(--text-color);
       }
       .social-wrapper {
         max-width: 1200px;
@@ -50,13 +67,13 @@ export class KennySocial extends DDDSuper(LitElement) {
         gap: var(--ddd-spacing-8);
       }
       .social-link {
-        color: var(--ddd-theme-default-landgrantBrown);
+        color: var(--link-color);
         text-decoration: none;
         font-size: var(--ddd-font-size-l);
         transition: color 0.3s ease;
       }
       .social-link:hover {
-        color: var(--ddd-theme-default-potentialMidnight);
+        color: var(--text-color);
       }
       .team-name {
         font-size: var(--ddd-font-size-m);

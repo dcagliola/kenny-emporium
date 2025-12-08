@@ -37,10 +37,23 @@ export class KennyPage extends DDDSuper(I18NMixin(LitElement)) {
     static get styles() {
         return [super.styles,
         css`
+        /* Light Theme */
+      :host {
+        --bg-color: var(--ddd-theme-default-shrineTan);
+        --text-color: var(--ddd-theme-default-landgrantBrown);
+      }
+
+      /* Dark Theme */
+      @media(prefers-color-scheme: dark) {
+        :host {
+          --bg-color: var(--ddd-theme-default-landgrantBrown);
+          --text-color: var(--ddd-theme-default-roarLight);
+        }
+      }
         :host {
             display: block;
-            color: var(--ddd-theme-primary);
-            background-color: var(--ddd-theme-default-shrineTan);
+            color: var(--text-color);
+            background-color: var(--bg-color);
             font-family: var(--ddd-font-navigation);
         }
         .wrapper {
