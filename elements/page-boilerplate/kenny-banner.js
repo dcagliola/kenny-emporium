@@ -74,14 +74,28 @@ export class KennyBanner extends DDDSuper(I18NMixin(LitElement)) {
     static get styles() {
         return [super.styles,
         css`
+            /* Light Theme */
+            :host {
+                --bg-color: var(--ddd-theme-default-roarLight);
+                --text-color: var(--ddd-theme-default-potentialMidnight);
+            }
+
+            /* Dark Theme */
+            @media(prefers-color-scheme: dark) {
+                :host {
+                --bg-color: var(--ddd-theme-default-shrineTan);
+                --text-color: var(--ddd-theme-default-landgrantBrown);
+                }
+            }
+
             :host {
                 display: block;
                 width: 100%;
-                background-color: var(--ddd-theme-default-potentialMidnight);
+                background-color: var(--text-color);
             }
             .header {
                 width: 100%;
-                background-color: var(--ddd-theme-default-roarLight);
+                background-color: var(--bg-color);
                 padding: var(--ddd-spacing-4) var(--ddd-spacing-6);
                 display: flex;
                 justify-content: space-between;
