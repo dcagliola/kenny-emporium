@@ -84,8 +84,7 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   renderPage() {
-    switch (this.route) {
-      case "/schedule":
+      if (this.route.startsWith("/schedule")) {
         return html`
         <kenny-page page="Schedule">
           <h2>Full Schedule</h2>
@@ -95,16 +94,17 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
           <kenny-event></kenny-event>
           <kenny-event></kenny-event>
           <kenny-event></kenny-event>
-        </kenny-page>
-      `;
-      case "/team":
+        </kenny-page>;
+      `}
+      if (this.route.startsWith("/team")) {
         return html`
         <kenny-page page="team">
           <h2>Meet the Team!</h2>
           <p>Our amazing players and staff who make everything possible.</p>
           <kenny-image src="/api/kenny-images.json"></kenny-image>
         </kenny-page>`;
-      case "/about":
+      }
+      if (this.route.startsWith("/about")) {
         return html`
         <kenny-page page="about">
           <h2>About Kenny Sports</h2>
@@ -112,7 +112,7 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
             Our mission is to provide a supportive environment for athletes of all levels to grow and succeed.</p>
           <kenny-image src="/api/kenny-images.json"></kenny-image>
         </kenny-page>`;
-      default:
+      }
         return html`
           <kenny-page page="home">
             <h2>Welcome to Kenny Sports!</h2>
@@ -127,8 +127,6 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
         `;
 
     }
-  }
-  
   // Lit render the HTML
   render() {
     return html`
