@@ -26,13 +26,6 @@ export class KennyEvent extends DDDSuper(I18NMixin(LitElement)) {
       ...this.t,
       title: "Week View",
     };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/kenny-event.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
 
     // Get current date and calculate week
     this.currentDate = new Date();

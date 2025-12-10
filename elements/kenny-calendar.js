@@ -27,13 +27,6 @@ export class KennyCalendar extends DDDSuper(I18NMixin(LitElement)) {
       title: "Title",
       monthLabel: "Calendar", // fallback, can be localized
     };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/kenny-calendar.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
 
     // calendar state
     this.currentDate = new Date();
