@@ -2,8 +2,8 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./kenny-animated.js";
-const kennyUp = new URL("/elements/page-boilerplate/images/kenny-up.png", import.meta.url).href;
-const kennyDown = new URL("/elements/page-boilerplate/images/kenny-down.png", import.meta.url).href;
+const kennyUp = new URL("./images/kenny-up.png", import.meta.url).href;
+const kennyDown = new URL("./images/kenny-down.png", import.meta.url).href;
 
 /**
  * `kenny-button`
@@ -107,6 +107,23 @@ export class KennyButton extends DDDSuper(I18NMixin(LitElement)) {
     static get styles() {
         return [super.styles,
         css`
+
+            /* Light Theme */
+            :host {
+                --bg-color: var(--ddd-theme-default-roarLight);
+                --text-color: var(--ddd-theme-default-roarGolden);
+                --hover-color: var(--ddd-theme-default-landgrantBrown);
+            }
+
+            /* Dark Theme */
+            @media(prefers-color-scheme: dark) {
+                :host {
+                --bg-color: var(--ddd-theme-default-shrineTan);
+                --text-color: var(--ddd-theme-default-roarLight);
+                --hover-color: var(--ddd-theme-default-landgrantBrown);
+                }
+            }
+
             :host {
                 display: inline-block;
                 position: relative;
@@ -116,20 +133,20 @@ export class KennyButton extends DDDSuper(I18NMixin(LitElement)) {
                 align-items: center;
                 gap: var(--ddd-spacing-2);
                 padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
-                background-color: var(--ddd-theme-default-roarLight);
+                background-color: var(--bg-color);
                 border: none;
                 border-radius: var(--ddd-radius-sm);
                 cursor: pointer;
                 font-family: var(--ddd-font-navigation);
                 font-size: var(--ddd-font-size-m);
-                color: var(--ddd-theme-default-potentialMidnight);
+                color: var(--text-color);
                 text-decoration: none;
                 transition: background-color 0.3s ease;
                 min-height: 44px;
                 box-sizing: border-box;
             }
             .button-container:hover {
-                background-color: var(--ddd-theme-default-beaver70);
+                background-color: var(--hover-color);
             }
             .dropdown {
                 position: absolute;

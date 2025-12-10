@@ -89,8 +89,9 @@ export class KennySocial extends DDDSuper(LitElement) {
            © ${this.year} Kenny's Emporium
           </div>
           <div class="social-links">
-            <a href="#" class="social-link"> Facebook</a>
-            <a href="#" class="social-link"> Instagram</a>
+            <a href="https://hax.psu.edu/" class="social-link"> Facebook</a>
+            <a href="https://hax.psu.edu/" class="social-link"> Instagram</a>
+            <a href="https://hax.psu.edu/" class="social-link"> Twitter</a>
           </div>
         </div>
       </div>

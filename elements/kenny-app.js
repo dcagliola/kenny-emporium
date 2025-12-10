@@ -14,8 +14,8 @@ import "./kenny-carousel.js";
 import "./kenny-event.js";
 import "./kenny-social.js";
 import "./kenny-image.js";
-const kennyHome1 = new URL("/elements/page-boilerplate/images/kenny-home1.png", import.meta.url).href;
-const kennyHome2 = new URL("/elements/page-boilerplate/images/kenny-home2.png", import.meta.url).href;
+const kennyHome1 = new URL("./page-boilerplate/images/kenny-home1.png", import.meta.url).href;
+const kennyHome2 = new URL("./page-boilerplate/images/kenny-home2.png", import.meta.url).href;
 
 /**
  * `kenny-app`
@@ -101,7 +101,7 @@ export class KennyApp extends DDDSuper(I18NMixin(LitElement)) {
   renderPage() {
       if (this.route.startsWith("/schedule")) {
         return html`
-        <kenny-page page="Schedule">
+        <kenny-page page="schedule">
           <h2>Full Schedule</h2>
           <kenny-calendar></kenny-calendar>
 
