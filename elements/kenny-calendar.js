@@ -138,6 +138,38 @@ export class KennyCalendar extends DDDSuper(I18NMixin(LitElement)) {
           font-family: var(--ddd-font-navigation);
         }
 
+        /* Light Theme */
+        :host {
+          --button-color: var(--ddd-theme-default-landgrantBrown);
+          --text-color: var(--ddd-theme-default-roarLight);
+        }
+
+        /* Dark Theme */
+        @media(prefers-color-scheme: dark) {
+          :host {
+            --button-color: var(--ddd-theme-default-shrineTan);
+            --text-color: var(--ddd-theme-default-landgrantBrown);
+          }
+        }
+
+        .nav-button{
+          background-color: var(--button-color);
+          color: var(--text-color);
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          opacity: 0.9;
+        }
+
+        .nav-button:active {
+          transform: scale(0.98);
+        }
+
         .wrapper {
           margin: var(--ddd-spacing-2);
           padding: var(--ddd-spacing-4);
@@ -183,7 +215,7 @@ export class KennyCalendar extends DDDSuper(I18NMixin(LitElement)) {
 
         .event-item {
           font-size: 0.8em;
-          background-color: lightblue;
+          background-color: var(--ddd-theme-default-shrineTan);
           margin-top: 2px;
           padding: 2px;
           border-radius: 3px;
@@ -200,14 +232,14 @@ export class KennyCalendar extends DDDSuper(I18NMixin(LitElement)) {
         </h3>
 
         <div class="calendar-header">
-          <button @click=${this._prevMonth}>Prev</button>
+          <button class="nav-button" @click=${this._prevMonth}>Prev</button>
           <span>
             ${this.currentDate.toLocaleString("default", {
               month: "long",
               year: "numeric",
             })}
           </span>
-          <button @click=${this._nextMonth}>Next</button>
+          <button class="nav-button" @click=${this._nextMonth}>Next</button>
         </div>
 
         <div class="calendar-grid">
